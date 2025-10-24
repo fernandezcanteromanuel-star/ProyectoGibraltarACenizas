@@ -23,16 +23,19 @@ class Catapulta:
             raise ValueError("La precisión solo está definida de 0 a 1")
         
     def mostrar_aciertos(self):
+        n = int(input("Número de veces que se quiere disparar: "))
+        i = 0
+        aciertos_fallos = {"Aciertos":0, "Fallos":0}
+        while n > i:
+            if Catapulta.disparar == "Casa inglesa destruida":
+                aciertos_fallos["Destruidas"] += 1
+            else:
+                aciertos_fallos["-_-"] += 1
+        return aciertos_fallos
         
 
 #Definimos catapulta para una prueba:
 Catapulta1 = Catapulta(40, 5, 10, 45, 0.7)
 
-#Formamos un while para hacer un número de disparos
 
-i = int(input('Número de disparos que se quieren hacer: '))
-n = 1
 
-while n <= i:
-    print(Catapulta1.mostrar_aciertos())
-    n += 1
