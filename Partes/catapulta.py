@@ -27,15 +27,17 @@ class Catapulta:
         i = 0
         aciertos_fallos = {"Aciertos":0, "Fallos":0}
         while n > i:
-            if Catapulta.disparar == "Casa inglesa destruida":
-                aciertos_fallos["Destruidas"] += 1
+            if Catapulta.disparar(self) == "Casa inglesa destruida":
+                aciertos_fallos["Aciertos"] += 1
             else:
-                aciertos_fallos["-_-"] += 1
+                aciertos_fallos["Fallos"] += 1
+            i +=1
         return aciertos_fallos
         
 
 #Definimos catapulta para una prueba:
 Catapulta1 = Catapulta(40, 5, 10, 45, 0.7)
+print(Catapulta1.mostrar_aciertos())
 
 
 
